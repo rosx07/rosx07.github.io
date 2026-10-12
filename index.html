@@ -3,34 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>박지민 - 프로필</title>
+  <title>박지민 - 프로필 페이지</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 30px;
-      color: #222;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      background-color: #ffffff;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 35px;
+      color: #2c3e50;
+      background-color: #f8f9fa;
+    }
+    .card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid #edf2f7;
+    }
+    .header {
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
     }
     h1 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-      color: #111;
+      font-size: 2.2rem;
+      margin: 0 0 8px 0;
+      color: #1a202c;
+      font-weight: 700;
     }
     .subtitle {
       font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 25px;
+      color: #4a5568;
+      margin: 0;
+      font-weight: 500;
     }
-    hr {
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 20px 0;
+    .intro-box {
+      background-color: #f0f4f8;
+      border-left: 4px solid #3182ce;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+      color: #2d3748;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: #2b6cb0;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
     }
     ul {
       list-style: none;
@@ -40,46 +68,67 @@
     li {
       margin-bottom: 12px;
       font-size: 1.05rem;
+      display: flex;
+      align-items: center;
     }
     li strong {
+      width: 130px;
+      color: #4a5568;
+      flex-shrink: 0;
+    }
+    .badge {
       display: inline-block;
-      width: 80px;
-      color: #444;
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.95rem;
     }
     a {
-      color: #0066cc;
+      color: #3182ce;
       text-decoration: none;
+      transition: color 0.2s;
     }
     a:hover {
       text-decoration: underline;
+      color: #2b6cb0;
     }
     footer {
-      margin-top: 30px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #edf2f7;
       font-size: 0.85rem;
-      color: #888;
+      color: #a0aec0;
       text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h1>박지민</h1>
-  <p class="subtitle">국민대학교 경영정보학부</p>
+  <div class="card">
+    <header class="header">
+      <h1>박지민</h1>
+      <p class="subtitle">국민대학교 경영정보학부</p>
+    </header>
 
-  <hr>
+    <div class="intro-box">
+      👋 안녕하세요! 국민대 경영정보학부 소속 박지민입니다.
+    </div>
 
-  <ul>
-    <li><strong>이름</strong> 박지민</li>
-    <li><strong>소속</strong> 국민대학교 경영정보학부</li>
-    <li><strong>학번</strong> 20262078</li>
-    <li><strong>이메일</strong> <a href="mailto:rosx07@kookmin.ac.kr">rosx07@kookmin.ac.kr</a></li>
-  </ul>
+    <section>
+      <h2>📌 인적사항 & 정보</h2>
+      <ul>
+        <li><strong>이름</strong> 박지민</li>
+        <li><strong>소속</strong> 국민대학교 경영정보학부</li>
+        <li><strong>학번</strong> 20262078</li>
+        <li><strong>MBTI</strong> <span class="badge">ENFJ</span></li>
+        <li><strong>이메일</strong> <a href="mailto:rosx07@kookmin.ac.kr">rosx07@kookmin.ac.kr</a></li>
+      </ul>
+    </section>
 
-  <hr>
-
-  <footer>
-    © 2026 박지민. All rights reserved.
-  </footer>
-
-</body>
-</html>
+    <section>
+      <h2>💻 현재 진행 중인 학습</h2>
+      <ul>
+        <li><strong>학습 내용</strong> GitHub Pages를 활용한 나만의 홈페이지 만드는 작업 진행 중</li>
+        <li><strong>학습 목표</strong> 웹 구조 이해 및 GitHub 기반
