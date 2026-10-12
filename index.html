@@ -3,132 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>박지민 - 프로필 페이지</title>
+  <title>박지민 - 개인 프로필 & 포트폴리오</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.7;
-      max-width: 650px;
-      margin: 50px auto;
-      padding: 35px;
-      color: #2c3e50;
-      background-color: #f8f9fa;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.8;
+      color: #334155;
+      background: linear-gradient(135deg, #e0f2fe 0%, #f1f5f9 50%, #e2e8f0 100%);
+      padding: 40px 20px;
+      min-height: 100vh;
     }
-    .card {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
       background: #ffffff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      border: 1px solid #edf2f7;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
     }
-    .header {
-      border-bottom: 2px solid #edf2f7;
-      padding-bottom: 20px;
-      margin-bottom: 25px;
+    /* Hero Banner Header */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #3b82f6 100%);
+      color: #ffffff;
+      padding: 50px 40px;
+      text-align: left;
+      position: relative;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin: 0 0 8px 0;
-      color: #1a202c;
-      font-weight: 700;
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
-    .subtitle {
-      font-size: 1.1rem;
-      color: #4a5568;
-      margin: 0;
+    .hero p {
+      font-size: 1.2rem;
+      color: #93c5fd;
       font-weight: 500;
     }
-    .intro-box {
-      background-color: #f0f4f8;
-      border-left: 4px solid #3182ce;
-      padding: 15px 20px;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 30px;
-      font-size: 1.05rem;
-      color: #2d3748;
+    .hero .badge-group {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Main Content Body */
+    .content {
+      padding: 40px;
     }
     section {
-      margin-bottom: 30px;
+      margin-bottom: 45px;
+    }
+    section:last-child {
+      margin-bottom: 10px;
     }
     h2 {
-      font-size: 1.3rem;
-      color: #2b6cb0;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 8px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    li {
-      margin-bottom: 12px;
-      font-size: 1.05rem;
+      font-size: 1.4rem;
+      color: #1e3a8a;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
     }
-    li strong {
-      width: 130px;
-      color: #4a5568;
-      flex-shrink: 0;
+    
+    /* Intro Box */
+    .intro-card {
+      background-color: #f8fafc;
+      border-left: 5px solid #2563eb;
+      padding: 22px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      color: #334155;
     }
-    .badge {
-      display: inline-block;
-      background-color: #ebf8ff;
-      color: #2b6cb0;
-      font-weight: 600;
-      padding: 2px 10px;
+
+    /* Info Grid List */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .info-item {
+      background: #f1f5f9;
+      padding: 16px 20px;
       border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .info-item span.label {
+      font-weight: 700;
+      color: #475569;
+    }
+    .info-item span.value {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Learning Cards */
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .card-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+    }
+    .card-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      border-color: #93c5fd;
+    }
+    .card-item h3 {
+      font-size: 1.1rem;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    .card-item p {
+      font-size: 0.98rem;
+      color: #64748b;
+    }
+
+    /* Timeline Section */
+    .timeline {
+      border-left: 3px solid #cbd5e1;
+      padding-left: 20px;
+      margin-left: 10px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: #2563eb;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+    }
+    .timeline-date {
+      font-size: 0.85rem;
+      color: #2563eb;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .timeline-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .timeline-desc {
       font-size: 0.95rem;
+      color: #64748b;
+    }
+
+    /* Tag Cloud */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Contact Footer */
+    footer {
+      background-color: #f8fafc;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+      color: #94a3b8;
+      font-size: 0.9rem;
     }
     a {
-      color: #3182ce;
+      color: #2563eb;
       text-decoration: none;
-      transition: color 0.2s;
+      font-weight: 600;
     }
     a:hover {
       text-decoration: underline;
-      color: #2b6cb0;
-    }
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #edf2f7;
-      font-size: 0.85rem;
-      color: #a0aec0;
-      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <header class="header">
-      <h1>박지민</h1>
-      <p class="subtitle">국민대학교 경영정보학부</p>
+  <div class="container">
+    <!-- 1. 메인 헤더 (상단 비주얼) -->
+    <header class="hero">
+      <h1>박지민 (Jimin Park)</h1>
+      <p>국민대학교 경영정보학부 26학번</p>
+      <div class="badge-group">
+        <span class="hero-badge">🎓 국민대학교</span>
+        <span class="hero-badge">💼 경영정보학부</span>
+        <span class="hero-badge">⚡ MBTI: ENFJ</span>
+        <span class="hero-badge">🚀 Web Developer in Training</span>
+      </div>
     </header>
 
-    <div class="intro-box">
-      👋 안녕하세요! 국민대 경영정보학부 소속 박지민입니다.
+    <div class="content">
+      <!-- 2. 상세 자기소개 -->
+      <section>
+        <h2>👋 안녕하세요!</h2>
+        <div class="intro-card">
+          국민대학교 경영정보학부 소속 <strong>박지민</strong>입니다.<br>
+          비즈니스 가치와 IT 기술을 연결하는 경영정보학의 매력을 탐구하고 있으며, 현재는 나만의 웹사이트를 직접 구축하고 GitHub을 활용해 배포하는 실습을 진행하고 있습니다.
+        </div>
+      </section>
+
+      <!-- 3. 기본 인적사항 (그리드 스타일) -->
+      <section>
+        <h2>📌 기본 정보</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">성명</span>
+            <span class="value">박지민</span>
+          </div>
+          <div class="info-item">
+            <span class="label">소속</span>
+            <span class="value">국민대학교 경영정보학부</span>
+          </div>
+          <div class="info-item">
+            <span class="label">학번</span>
+            <span class="value">20262078</span>
+          </div>
+          <div class="info-item">
+            <span class="label">MBTI</span>
+            <span class="value" style="color: #2563eb;">ENFJ (정의로운 사회운동가)</span>
+          </div>
+          <div class="info-item" style="grid-column: span 1 / -1;">
+            <span class="label">이메일</span>
+            <span class="value"><a href="mailto:rosx07@kookmin.ac.kr">rosx07@kookmin.ac.kr</a></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. MBTI 특징 분석 -->
+      <section>
+        <h2>💡 MBTI 성향 (ENFJ) 분석</h2>
+        <div class="card-list">
+          <div class="card-item">
+            <h3>🤝 협동과 리더십</h3>
+            <p>팀 프로젝트에서 타인의 의견을 경청하며 목표를 향해 함께 나아가는 뛰어난 리더십과 소통 능력을 발휘합니다.</p>
+          </div>
+          <div class="card-item">
+            <h3>🔥 열정적인 학습 태도</h3>
+            <p>새로운 지식이나 기술(HTML, CSS, Git 등)을 접했을 때 주저하지 않고 직접 도전하여 내 것으로 만드는 것을 즐깁니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 현재 진행 중인 학습 & 작업 -->
+      <section>
+        <h2>💻 현재 배우고 있는 내용</h2>
+        <div class="card-list">
+          <div class="card-item">
+            <h3>1. 개인 웹페이지 구축 및 배포 프로젝트</h3>
+            <p>현재 GitHub Pages를 활용하여 내 소개와 포트폴리오를 다룰 수 있는 시각적 웹사이트 제작 작업을 진행하고 있습니다.</p>
+          </div>
+          <div class="card-item">
+            <h3>2. HTML5 & CSS3 정적 웹 레이아웃 설계</h3>
+            <p>웹 표준을 준수하며 모바일과 PC 화면에 모두 대응하는 반응형 페이지 및 컬러 스타일링 적용법을 학습하고 있습니다.</p>
+          </div>
+          <div class="card-item">
+            <h3>3. Git & GitHub 형상 관리</h3>
+            <p>소스코드 버전 관리의 흐름을 이해하고 원격 저장소(Repository)에 프로젝트를 효율적으로 올리는 과정을 익히고 있습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 학습 타임라인 -->
+      <section>
+        <h2>🗓️ 타임라인</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2026년</div>
+            <div class="timeline-title">국민대학교 경영정보학부 입학</div>
+            <div class="timeline-desc">비즈니스 정보시스템 및 IT 융합 전공 학습 시작</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">현재</div>
+            <div class="timeline-title">GitHub 기반 웹 호스팅 프로젝트 진행</div>
+            <div class="timeline-desc">`rosx07.github.io` 개인 메인 홈페이지 제작 및 배포 완료</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. 관심 키워드 태그 -->
+      <section>
+        <h2>🏷️ 관심 분야</h2>
+        <div class="tags">
+          <span class="tag">#경영정보학</span>
+          <span class="tag">#웹_개발</span>
+          <span class="tag">#GitHub_Pages</span>
+          <span class="tag">#ENFJ</span>
+          <span class="tag">#국민대학교</span>
+          <span class="tag">#IT_비즈니스</span>
+        </div>
+      </section>
     </div>
 
-    <section>
-      <h2>📌 인적사항 & 정보</h2>
-      <ul>
-        <li><strong>이름</strong> 박지민</li>
-        <li><strong>소속</strong> 국민대학교 경영정보학부</li>
-        <li><strong>학번</strong> 20262078</li>
-        <li><strong>MBTI</strong> <span class="badge">ENFJ</span></li>
-        <li><strong>이메일</strong> <a href="mailto:rosx07@kookmin.ac.kr">rosx07@kookmin.ac.kr</a></li>
-      </ul>
-    </section>
+    <!-- 8. 하단 푸터 -->
+    <footer>
+      <p>© 2026 박지민. All rights reserved.</p>
+      <p style="margin-top: 5px;">국민대학교 경영정보학부 | <a href="mailto:rosx07@kookmin.ac.kr">rosx07@kookmin.ac.kr</a></p>
+    </footer>
+  </div>
 
-    <section>
-      <h2>💻 현재 진행 중인 학습</h2>
-      <ul>
-        <li><strong>학습 내용</strong> GitHub Pages를 활용한 나만의 홈페이지 만드는 작업 진행 중</li>
-        <li><strong>학습 목표</strong> 웹 구조 이해 및 GitHub 기반
+</body>
+</html>
