@@ -51,6 +51,29 @@
       gap: 10px;
       flex-wrap: wrap;
     }
+    .hero-links {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .hero-links a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
     .hero-badge {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(5px);
@@ -196,6 +219,50 @@
       font-weight: 600;
     }
 
+    /* Game Card */
+    .game-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      border-radius: 14px;
+      padding: 26px;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(30, 58, 138, 0.35);
+    }
+    .game-card-text {
+      flex: 1 1 260px;
+    }
+    .game-card-text h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #93c5fd;
+    }
+    .game-card-text p {
+      font-size: 0.95rem;
+      color: #dbeafe;
+      line-height: 1.7;
+    }
+    .game-play-btn {
+      flex-shrink: 0;
+      background: #ef4444;
+      color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 2px solid #fca5a5;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .game-play-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(239, 68, 68, 0.5);
+      text-decoration: none;
+    }
+
     /* Contact Footer */
     footer {
       background-color: #f8fafc;
@@ -227,6 +294,11 @@
         <span class="hero-badge">💼 경영정보학부</span>
         <span class="hero-badge">⚡ MBTI: ENFJ</span>
         <span class="hero-badge">🚀 Web Developer in Training</span>
+      </div>
+      <div class="hero-links">
+        <a href="mailto:rosx07@kookmin.ac.kr">✉️ 이메일</a>
+        <a href="https://github.com/rosx07" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+        <a href="game.html">🕹️ 게임 플레이</a>
       </div>
     </header>
 
@@ -328,6 +400,18 @@
           <span class="tag">#ENFJ</span>
           <span class="tag">#국민대학교</span>
           <span class="tag">#IT_비즈니스</span>
+        </div>
+      </section>
+
+      <!-- 8. 미니 게임 -->
+      <section>
+        <h2>🕹️ 미니 게임</h2>
+        <div class="game-card">
+          <div class="game-card-text">
+            <h3>Super Galaga Arcade</h3>
+            <p>직접 만든 레트로 슈팅 게임입니다. 적 편대를 격파하고 무기를 업그레이드해 최고 점수에 도전해 보세요. PC는 키보드, 모바일은 터치로 조작할 수 있어요.</p>
+          </div>
+          <a href="game.html" class="game-play-btn">▶ 플레이하기</a>
         </div>
       </section>
     </div>
