@@ -66,11 +66,20 @@ exports.handler = async (event) => {
       .single();
 
     if (error) {
+      // Supabase 가 반환한 실제 오류를 서버 로그에만 기록한다 (환경변수 값은 남기지 않는다).
+      console.error('[guestbook-create] supabase error:', {
+        code: error.code,
+        message: error.message,
+        details: error.details,
+        hint: error.hint,
+      });
       return json(500, { error: '방명록 저장에 실패했습니다.' });
     }
 
     return json(201, { item: data });
   } catch (e) {
+    // 예외 내용을 서버 로그에만 기록한다.
+    console.error('[guestbook-create] unexpected error:', e && (e.stack || e.message || e));
     return json(500, { error: '서버 오류가 발생했습니다.' });
   }
 };
