@@ -1,0 +1,13 @@
+# 의존성
+node_modules/
+
+# 환경변수 (비밀 키) — 절대 커밋하지 않는다
+.env
+.env.*
+!.env.example
+
+# Netlify 로컬 산출물
+.netlify/
+
+# Kiro 로컬 개발 도구 설정 (개인 Notion URL/ID 등 — 공개 저장소에서 제외)
+.kiro/
